@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservar  Hosp-Hoteles</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 2rem;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .hotels {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-8px); }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .content {
+      padding: 1rem;
+      background: #fff;
+    }
+    .content h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+    }
+    .content p {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .select-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    input[type="radio"] {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+    label {
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    
+    .card.realinn {
+      border-top: 4px solid #0077cc;
+    }
+    .card.fiesta {
+      border-top: 4px solid #e67e22;
+    }
+    .card.hyatt {
+      border-top: 4px solid #16a085;
+    }
+
+    #reserveBtn {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      background: #0077cc;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #reserveBtn:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Elige tu hotel </h2>
+  <div class="hotels">
+    
+    <div class="card realinn">
+      <img src="h1.png" alt="Real Inn San Luis Potosí">
+      <div class="content">
+        <h3>Real Inn San Luis Potosí</h3>
+        <p>📍 Carretera a Guadalajara No. 1100, Fracc. La Loma, SLP 78216</p>
+        <p>   Este hotel sencillo se encuentra a 15 km de las exhibiciones interactivas del Museo Laberinto de las Ciencias y las Artes y a 22 km de la catedral de San Luis Potosí.
+
+Las habitaciones tranquilas disponen de Wi-Fi gratis, TV de pantalla plana, caja fuerte, aire acondicionado y baño en suite. Las suites incluyen área de estar independiente. Algunas tienen bañera con hidromasaje. Se ofrece servicio a la habitación las 24 horas, todos los días.
+
+El estacionamiento es gratuito. Otras comodidades incluyen un restaurante, un bar, un gimnasio, un spa y espacio para eventos y reuniones. También hay una cancha de tenis, una piscina al aire libre y una cafetería. Se ofrecen desayuno y transporte desde/hacia el aeropuerto.
+Wi-Fi gratis    Desayuno    Estacionamiento gratuito    Accesible    Piscina    Aire acondicionado            </p>
+        <div class="select-wrapper">
+          <input type="radio" name="hotel" value="Real Inn San Luis Potosí" id="r1">
+          <label for="r1">Seleccionar</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fiesta Americana -->
+    <div class="card fiesta">
+      <img src="2.jpg" alt="Fiesta Americana San Luis Potosí">
+      <div class="content">
+        <h3>Fiesta Americana San Luis Potosí</h3>
+        <p>📍 Av. Salvador Nava Martínez 3125, Colinas del Parque, SLP</p>
+        <p> Este hotel informal, ubicado en un centro comercial junto a la autopista 80, se encuentra a 7 minutos a pie del parque Tangamanga, una extensa área verde con lagos, museos, un zoológico y senderos en el bosque.
+
+Las habitaciones sencillas cuentan con TV de pantalla plana, Wi-Fi, frigobar, cafetera, área de visitas y vista a la ciudad. Las suites incluyen también sala de estar.
+
+Hay un restaurante refinado y luminoso con ventanas de pared completa. Se ofrece desayuno.
+Wi-Fi gratis    Desayuno    Estacionamiento gratuito    Accesible    Piscina    Aire acondicionado                               </p>
+        <div class="select-wrapper">
+          <input type="radio" name="hotel" value="Fiesta Americana San Luis Potosí" id="r2">
+          <label for="r2">Seleccionar</label>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="card hyatt">
+      <img src="3.jpg", alt="Hyatt Regency San Luis Potosí">
+      <div class="content">
+        <h3>Hyatt Regency San Luis Potosí</h3>
+        <p>📍 Avenida Real de Lomas 290, Lomas, SLP 78216</p>
+        <p>  Este hotel contemporáneo se encuentra a 13 km de la catedral de San Luis Potosí del siglo XVII y a 7 km del Museo Laberinto de las Ciencias y las Artes.
+
+Las habitaciones y suites refinadas tienen Wi-Fi gratis, TV de pantalla plana, baño en suite con ducha tipo lluvia, caja fuerte, minibar y utensilios para preparar té y café. Algunas tienen área de visitas, balcón o comedor. Las habitaciones mejoradas brindan acceso a un salón de club con desayuno, bocadillos y bebidas incluidos. Se ofrece servicio a la habitación las 24 horas, todos los días.
+
+Las comodidades incluyen un un restaurante, una piscina climatizada al aire libre, 3 bares, un gimnasio y espacio para eventos y reuniones. Se ofrecen desayuno y servicio de estacionamiento.
+Wi-Fi gratis    Desayuno pago    Estacionamiento gratuito    Accesible    Piscina al aire libre    Aire acondicionado                                              </p> 
+        <div class="select-wrapper">
+          <input type="radio" name="hotel" value="Hyatt Regency San Luis Potosí" id="r3">
+          <label for="r3">Seleccionar</label>
+        </div>
+      </div>
+       </div>
+
+      
+
+
+       
+       <div class="card hyatt">
+      <img src="4.jpg", alt="Gamma Monterrey Gran Hotel Ancira (antes Gran Hotel Ancira)">
+      <div class="content">
+        <h3>Gamma Monterrey Gran Hotel Ancira (antes Gran Hotel Ancira)í</h3>
+        <p>📍 Avenida Real de Lomas 290, Lomas, SLP 78216</p>
+         <p>  Este hotel contemporáneo se encuentra a 13 km de la catedral de San Luis Potosí del siglo XVII y a 7 km del Museo Laberinto de las Ciencias y las Artes.
+
+Las habitaciones y suites refinadas tienen Wi-Fi gratis, TV de pantalla plana, baño en suite con ducha tipo lluvia, caja fuerte, minibar y utensilios para preparar té y café. Algunas tienen área de visitas, balcón o comedor. Las habitaciones mejoradas brindan acceso a un salón de club con desayuno, bocadillos y bebidas incluidos. Se ofrece servicio a la habitación las 24 horas, todos los días.
+
+Las comodidades incluyen un un restaurante, una piscina climatizada al aire libre, 3 bares, un gimnasio y espacio para eventos y reuniones. Se ofrecen desayuno y servicio de estacionamiento.
+Wi-Fi gratis    Desayuno pago    Estacionamiento gratuito    Accesible    Piscina al aire libre    Aire acondicionado                                               </p>
+        <div class="select-wrapper">
+          <input type="radio" name="hotel" value="Gamma Monterrey Gran Hotel Ancira (antes Gran Hotel Ancira)" id="r4">
+          <label for="r4">Seleccionar</label>
+            </div>
+      </div>
+    </div>
+
+        <div class="card hyatt">
+      <img src="5.jpg", alt="Fiesta Inn Monterrey Valle">
+      <div class="content">
+        <h3>Fiesta Inn Monterrey Valle</h3>
+        <p>📍 Av. Lázaro Cárdenas 327, Col. Valle Oriente, San Pedro Garza García, N.L. </p>
+         <p>   Este hotel tranquilo se encuentra a 5 km de las exhibiciones de arte del Museo de Arte Contemporáneo de Monterrey, a 6 km de las exhibiciones históricas del Museo de Historia Mexicana y a 9 km del parque Fundidora.
+
+Las habitaciones contemporáneas cuentan con TV de pantalla plana, Wi-Fi gratis, escritorio y baño privado. Las suites también incluyen sala de estar y conector para iPod. Se ofrece servicio a la habitación.
+
+La propiedad cuenta con un restaurante informal abierto las 24 horas en el que se sirve desayuno tipo buffet (por una tarifa adicional) y comida a la carta. Entre otras comodidades, se incluyen un bar, un gimnasio y un centro de negocios.
+Wi-Fi gratis    Desayuno    Estacionamiento gratuito    Accesible    Aire acondicionado    Servicio de lavandería                                                </p>
+        <div class="select-wrapper">
+          <input type="radio" name="hotel" value="Fiesta Inn Monterrey Valle" id="r3">
+          <label for="r3">Seleccionar</label>
+            </div>
+      </div>
+    </div> 
+
+        <div class="card hyatt">
+      <img src="6s.jpg", alt="Hotel Safi Metropolitan
+">
+      <div class="content">
+        <h3>Hotel Safi Metropolitan</h3>
+        <p>📍 Calle Lázaro Cárdenas 2000, Valle Oriente, San Pedro Garza García, N.L</p>
+        <p>     Este hotel de lujo, ubicado en un complejo moderno de edificios junto a la carretera federal 85, ofrece vistas lejanas de la cima del cerro San Rafael. También se encuentra a un minuto a pie de las tiendas y restaurantes del Centro Metropolitano y a 5 km de la Macroplaza y del Museo de Arte Contemporáneo de Monterrey.
+
+Las habitaciones elegantes y modernas tienen Wi-Fi, smart TV, minibar, cafetera Nespresso y área de visitas. Las habitaciones y suites mejoradas incluyen vistas a la ciudad y a la montaña. Se ofrece servicio a la habitación las 24 horas, todos los días.
+
+Entre las comodidades se incluyen una piscina climatizada al aire libre con una tina y un tobogán acuático, además de un gimnasio y un spa. También se ofrece estacionamiento y desayuno tipo buffet.
+Wi-Fi gratis    Desayuno incluido    Estacionamiento gratuito    Accesible    Piscina al aire libre    Aire acondiciona                                                   </p>
+        <div class="select-wrapper">
+          <input type="radio" name="hotel" value="Hotel Safi Metropolitan" id="r3">
+          <label for="r3">Seleccionar</label>
+        </div>
+
+      </div>
+    </div> 
+  </div>
+
+  <button id="reserveBtn">Reservar por WhatsApp</button>
+
+  <script>
+    const phone = "5218131299274";
+    document.getElementById('reserveBtn').onclick = () => {
+      const sel = document.querySelector('input[name="hotel"]:checked');
+      if (!sel) {
+        alert('Por favor selecciona un hotel.');
+        return;
+      }
+      const msg = encodeURIComponent(`Hola, deseo reservar en ${sel.value} en San Luis Potosí`);
+      window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+    };
+  </script>
+
+</body>
+</html>
